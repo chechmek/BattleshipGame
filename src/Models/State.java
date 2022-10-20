@@ -3,6 +3,10 @@ package Models;
 public enum State {
     Available,
     Unavailable,
-    WithShip,
-    DamagedShip
+    DamagedShip,
+    WithPatrol,
+    WithCarrier,
+    WithBattleship,
+    WithSubmarine
+
 }

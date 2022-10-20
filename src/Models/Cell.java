@@ -11,4 +11,14 @@ public class Cell {
         State = state;
         Coordinate = new Coordinate(x, y);
     }
+
+    public boolean withShip(){
+        if (State == Models.State.WithBattleship
+        || State == Models.State.WithPatrol
+        || State == Models.State.WithCarrier
+        || State == Models.State.WithSubmarine){
+            return true;
+        }
+        return false;
+    }
 }

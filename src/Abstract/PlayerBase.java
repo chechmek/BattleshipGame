@@ -6,8 +6,6 @@ import Models.Map;
 import Models.State;
 import Static.Properties;
 
-import java.util.ArrayList;
-
 public abstract class PlayerBase implements IPlayer, IEnemy {
     public PlayerBase(){
         Cell[][] grid= new Cell[Properties.MapSize][Properties.MapSize];
@@ -32,7 +30,7 @@ public abstract class PlayerBase implements IPlayer, IEnemy {
             // length returns number of rows
             for (int j = 0; j < grid[i].length; j++) {
                 // here length returns # of columns corresponding to current row
-                if(grid[i][j].State == State.WithShip){
+                if(grid[i][j].State == State.Available){
                     return false;
                 }
             }
@@ -43,11 +41,6 @@ public abstract class PlayerBase implements IPlayer, IEnemy {
         Enemy = enemy;
     }
     public void CheckCell(Coordinate coordinate) {
-        if(Map.getGrid()[coordinate.X][coordinate.Y].State == State.WithShip){
-            Map.getGrid()[coordinate.X][coordinate.Y].State = State.DamagedShip;
-        }
-        if(Map.getGrid()[coordinate.X][coordinate.Y].State == State.Available){
-            Map.getGrid()[coordinate.X][coordinate.Y].State = State.Unavailable;
-        }
+        Map.damageCell(coordinate);
     }
 }

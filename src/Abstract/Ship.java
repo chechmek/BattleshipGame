@@ -11,6 +11,11 @@ public abstract class Ship {
 
     public boolean isDestroyed(){
         // check if destroyed
-        return false;
+        for(int i = 0; i < Array.length; i++){
+            if(Array[i].withShip()){
+                return false;
+            }
+        }
+        return true;
     }
 }
