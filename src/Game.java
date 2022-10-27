@@ -18,11 +18,11 @@ public class Game {
 
     public void Start(){
         gameIsEnded = false;
+        ui.updateScreen(player.getMap(), playerAI.getMap());
         player.setShips();
         playerAI.setShips();
         player.setEnemy(playerAI);
         playerAI.setEnemy(player);
-        ui.updateScreen(player.getMap(), playerAI.getMap());
         GameLoop();
     }
 
