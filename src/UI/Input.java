@@ -3,6 +3,7 @@ package UI;
 import Abstract.IInput;
 import Abstract.Ship;
 import Models.Coordinate;
+import Ships.Battleship;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -26,6 +27,8 @@ public class Input implements IInput
     }
 
     public ArrayList<Ship> setShips() {
+
+
         return null;
     }
 
