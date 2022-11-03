@@ -21,7 +21,18 @@ public class UserInterface implements IUserInterface
                 }
                 else if (grid[i][j].State == State.Unavailable){
                     System.out.print("X");
-
+                }
+                else if (grid[i][j].State == State.WithBattleship){
+                    System.out.print("B");
+                }
+                else if (grid[i][j].State == State.WithCarrier){
+                    System.out.print("C");
+                }
+                else if (grid[i][j].State == State.WithSubmarine){
+                    System.out.print("S");
+                }
+                else if (grid[i][j].State == State.WithPatrol){
+                    System.out.print("P");
                 }
                 else {
                     System.out.print("Error");

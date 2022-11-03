@@ -20,6 +20,7 @@ public class Game {
         gameIsEnded = false;
         player.setShips();
         playerAI.setShips();
+        ui.updateScreen(player.getMap(), playerAI.getMap());
         player.setEnemy(playerAI);
         playerAI.setEnemy(player);
         ui.updateScreen(player.getMap(), playerAI.getMap());
