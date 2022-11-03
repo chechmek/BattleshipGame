@@ -25,7 +25,7 @@ public abstract class Ship {
 
         //Checking coordinates for a horizontal or vertical positioning
         if (coord1.X == coord2.X ){
-            if (Math.abs(coord1.Y-coord2.Y) == length){
+            if (Math.abs(coord1.Y-coord2.Y) == length - 1){
                 // loop for adding several pieces of ship with attributes to one array
                 for (int i =0; i < shipArray.length; i++){
                     shipArray[i] = new Cell(coord1.X, coord1.Y + i, state);
@@ -37,7 +37,7 @@ public abstract class Ship {
             }
         }
         else if ( coord1.Y ==coord2.Y){
-            if (Math.abs(coord1.X-coord2.X) == length){
+            if (Math.abs(coord1.X-coord2.X) == length - 1){
                 for (int i =0; i< length; i++){
                     shipArray[i] = new Cell(coord1.X + i, coord1.Y, state);
                 }

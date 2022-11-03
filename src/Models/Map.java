@@ -18,6 +18,12 @@ public class Map implements IMap
     }
     public void setShips(ArrayList<Ship> ships) {
         this.ships = ships;
+        for (int i=0; i < ships.size(); i++){
+            for (int j=0; j < ships.get(i).Array.length; j++) {
+                Cell[] shipAray = ships.get(i).Array;
+                grid[shipAray[j].Coordinate.X][shipAray[j].Coordinate.Y].State = shipAray[j].State;
+            }
+        }
     }
     public void damageCell(Coordinate coordinate) {
         // Damage on Map

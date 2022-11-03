@@ -27,7 +27,7 @@ public class Input implements IInput
         String y = parts[1].trim();
         int X = dict.get(parts[0].trim().toUpperCase());
         int Y = Integer.parseInt(y);
-        Coordinate coordinate = new Coordinate(X-1,Y-1);
+        Coordinate coordinate = new Coordinate(X,Y-1);
         System.out.println("x: " + x + "\ny: " + y);
         return coordinate;
     }
@@ -44,7 +44,7 @@ public class Input implements IInput
 try {
 
 
-        for (int i =0; i<5; i++) {
+        for (int i =0; i<1; i++) {
             System.out.println("Enter starting coordinates of Battleship ");
 
             String coord1= input.nextLine();
@@ -54,7 +54,7 @@ try {
             String y1 = parts[1].trim();
             int X1 = dict.get(parts[0].trim().toUpperCase());
             int Y1 = Integer.parseInt(y1);
-            Coordinate coordinate1 = new Coordinate(X1-1,Y1-1);
+            Coordinate coordinate1 = new Coordinate(X1,Y1-1);
             System.out.println("x: " + x1 + "\ny: " + y1);
 
             System.out.println("Enter ending coordinates of Battleship ");
@@ -66,7 +66,7 @@ try {
             String y2 = parts2[1].trim();
             int X2 = dict.get(parts2[0].trim().toUpperCase());
             int Y2 = Integer.parseInt(y2);
-            Coordinate coordinate2 = new Coordinate(X2-1,Y2-1);
+            Coordinate coordinate2 = new Coordinate(X2,Y2-1);
             System.out.println("x: " + x2 + "\ny: " + y2);
             Battleship battleship = new Battleship(coordinate1,coordinate2);
 

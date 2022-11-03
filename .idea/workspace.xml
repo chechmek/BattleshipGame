@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="baf5ab1a-6c9b-4551-b7dc-4e74f044af3a" name="Changes" comment="">
+    <list default="true" id="baf5ab1a-6c9b-4551-b7dc-4e74f044af3a" name="Changes" comment="Added more states and updated Map damaging">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Abstract/IMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Abstract/IMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Abstract/PlayerBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Abstract/PlayerBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Abstract/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Abstract/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +62,14 @@
       <option name="presentableId" value="Default" />
       <updated>1666182486991</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added more states and updated Map damaging">
+      <created>1666279972628</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666279972628</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -76,5 +82,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added more states and updated Map damaging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more states and updated Map damaging" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Models/Map.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
