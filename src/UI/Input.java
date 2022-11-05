@@ -21,8 +21,7 @@ public class Input implements IInput {
         boolean gotCoord = false;
         System.out.println("Enter a coordinate to shoot: ");
 
-        while (!gotCoord)
-        {
+        while (!gotCoord) {
             try {
                 Coordinate coordinate = getCoordinateFromStr(input);
                 gotCoord = true;
@@ -122,7 +121,7 @@ public class Input implements IInput {
             throw new Exception("X is not valid: " + x);
         if (!isValidInt(y))
             throw new Exception("Y is not valid: " + y);
-        
+
         return new Coordinate(y, x);
     }
 
@@ -133,15 +132,18 @@ public class Input implements IInput {
     }
 
     private boolean isValidShip(Coordinate coord1, Coordinate coord2, int length, Cell[][] localGrid) {
-        if (coord1.X == coord2.X) {
-            if (Math.abs(coord1.Y - coord2.Y) == length - 1) {
-
-                return true;
+        if (coord1.X == coord2.X && coord2.Y - coord1.Y == length - 1) {
+            for(int i = 0; i < length; i++){
+                if(localGrid[coord1.X][i].withShip() || localGrid[coord1.X][i].State == State.Unavailable)
+                    return false;
             }
-        } else if (coord1.Y == coord2.Y) {
-            if (Math.abs(coord1.X - coord2.X) == length - 1) {
-                return true;
+            return true;
+        } else if (coord1.Y == coord2.Y && coord2.X - coord1.X == length - 1) {
+            for(int i = 0; i < length; i++){
+                if(localGrid[i][coord1.Y].withShip() || localGrid[i][coord1.Y].State == State.Unavailable)
+                    return false;
             }
+            return true;
         }
         return false;
     }
@@ -252,15 +254,103 @@ public class Input implements IInput {
 
     private void changeLocalGrid(Ship ship, Cell[][] localGrid, State state) {
         for (int i = 0; i < ship.Array.length; i++) {
-            try {
-                Cell cell = ship.Array[i];
-                localGrid[cell.Coordinate.X][cell.Coordinate.Y] = new Cell(cell.Coordinate.X, cell.Coordinate.Y, state);
-                // break around the ship
-
-            } catch (Exception e) {
-                // if the ship is on edge of map we will get OutOfArrayEx, so we ignore it
-            }
+            Cell cell = ship.Array[i];
+            localGrid[cell.Coordinate.X][cell.Coordinate.Y] = new Cell(cell.Coordinate.X, cell.Coordinate.Y, state);
         }
+        // break around the ship
+        String direction = "";
+        try{
+            if(ship.Array[0].Coordinate.X == ship.Array[1].Coordinate.X) // down
+                localGrid[ship.Array[0].Coordinate.X ][ship.Array[0].Coordinate.Y + ship.Array.length].State = State.Unavailable;
+        }
+        catch(Exception e){}
+        try{
+            if(ship.Array[0].Coordinate.Y == ship.Array[1].Coordinate.Y) // right
+                localGrid[ship.Array[0].Coordinate.X + ship.Array.length][ship.Array[0].Coordinate.Y].State = State.Unavailable;
+        }
+
+        catch (Exception e){}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X + 1;
+                int y = cell.Coordinate.Y;
+                if(localGrid[x][y].withShip())
+                    throw new Exception();
+                localGrid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X - 1;
+                int y = cell.Coordinate.Y;
+                if(localGrid[x][y].withShip())
+                    throw new Exception();
+                localGrid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X;
+                int y = cell.Coordinate.Y + 1;
+                if(localGrid[x][y].withShip())
+                    throw new Exception();
+                localGrid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X;
+                int y = cell.Coordinate.Y - 1;
+                if(localGrid[x][y].withShip())
+                    throw new Exception();
+                localGrid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X + 1;
+                int y = cell.Coordinate.Y + 1;
+                if(localGrid[x][y].withShip())
+                    throw new Exception();
+                localGrid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X + 1;
+                int y = cell.Coordinate.Y - 1;
+                if(localGrid[x][y].withShip())
+                    throw new Exception();
+                localGrid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X - 1;
+                int y = cell.Coordinate.Y + 1;
+                if(localGrid[x][y].withShip())
+                    throw new Exception();
+                localGrid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X - 1;
+                int y = cell.Coordinate.Y - 1;
+                if(localGrid[x][y].withShip())
+                    throw new Exception();
+                localGrid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
     }
 
 }
