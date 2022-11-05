@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="baf5ab1a-6c9b-4551-b7dc-4e74f044af3a" name="Changes" comment="Added more states and updated Map damaging">
+    <list default="true" id="baf5ab1a-6c9b-4551-b7dc-4e74f044af3a" name="Changes" comment="Upgraded input(ships overlapping is not yet checked)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Abstract/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Abstract/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ships/Battleship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ships/Battleship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ships/Carrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ships/Carrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ships/Patrol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ships/Patrol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ships/Submarine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ships/Submarine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Input.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/UserInterface.java" afterDir="false" />
     </list>
@@ -33,12 +36,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -85,15 +89,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added more states and updated Map damaging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more states and updated Map damaging" />
+    <MESSAGE value="Upgraded input(ships overlapping is not yet checked)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upgraded input(ships overlapping is not yet checked)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Models/Map.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/src/UI/Input.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

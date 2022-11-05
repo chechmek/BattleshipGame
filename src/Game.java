@@ -18,7 +18,6 @@ public class Game {
 
     public void Start(){
         gameIsEnded = false;
-        ui.updateScreen(player.getMap(), playerAI.getMap());
         player.setShips();
         playerAI.setShips();
         ui.updateScreen(player.getMap(), playerAI.getMap());
