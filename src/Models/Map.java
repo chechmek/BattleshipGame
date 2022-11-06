@@ -16,6 +16,101 @@ public class Map implements IMap
     public ArrayList<Ship> getShips(){
         return ships;
     }
+    public static void breakAroundShip(Ship ship, Cell[][] grid){
+        // break around the ship
+        try{
+            if(ship.Array[0].Coordinate.X == ship.Array[1].Coordinate.X) // down
+                grid[ship.Array[0].Coordinate.X ][ship.Array[0].Coordinate.Y + ship.Array.length].State = State.Unavailable;
+        }
+        catch(Exception e){}
+        try{
+            if(ship.Array[0].Coordinate.Y == ship.Array[1].Coordinate.Y) // right
+                grid[ship.Array[0].Coordinate.X + ship.Array.length][ship.Array[0].Coordinate.Y].State = State.Unavailable;
+        }
+
+        catch (Exception e){}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X + 1;
+                int y = cell.Coordinate.Y;
+                if(grid[x][y].withShip())
+                    throw new Exception();
+                grid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X - 1;
+                int y = cell.Coordinate.Y;
+                if(grid[x][y].withShip())
+                    throw new Exception();
+                grid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X;
+                int y = cell.Coordinate.Y + 1;
+                if(grid[x][y].withShip())
+                    throw new Exception();
+                grid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X;
+                int y = cell.Coordinate.Y - 1;
+                if(grid[x][y].withShip())
+                    throw new Exception();
+                grid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X + 1;
+                int y = cell.Coordinate.Y + 1;
+                if(grid[x][y].withShip())
+                    throw new Exception();
+                grid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X + 1;
+                int y = cell.Coordinate.Y - 1;
+                if(grid[x][y].withShip())
+                    throw new Exception();
+                grid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X - 1;
+                int y = cell.Coordinate.Y + 1;
+                if(grid[x][y].withShip())
+                    throw new Exception();
+                grid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+        try {
+            for (int i = 0; i < ship.Array.length; i++) {
+                Cell cell = ship.Array[i];
+                int x = cell.Coordinate.X - 1;
+                int y = cell.Coordinate.Y - 1;
+                if(grid[x][y].withShip())
+                    throw new Exception();
+                grid[x][y] = new Cell(x, y, State.Unavailable);
+            }
+        } catch (Exception e) {}
+    }
     public void setShips(ArrayList<Ship> ships) {
         this.ships = ships;
         for (int i=0; i < ships.size(); i++){
