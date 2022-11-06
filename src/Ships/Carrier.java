@@ -10,4 +10,8 @@ public class Carrier extends Ship {
     }
     public static final int Length = 6;
     public static final int Count = 1;
+    @Override
+    public String getSign() {
+        return "C";
+    }
 }

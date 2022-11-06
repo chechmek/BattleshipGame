@@ -3,11 +3,9 @@ package Abstract;
 import Models.Cell;
 import Models.Coordinate;
 import Models.State;
-import Ships.Battleship;
 
 public abstract class Ship {
     public Cell[] Array;
-
 
     public boolean isDestroyed(){
         // check if destroyed
@@ -18,6 +16,8 @@ public abstract class Ship {
         }
         return true;
     }
+
+    public abstract String getSign();
 
     protected Cell[] createShip(Coordinate coord1, Coordinate coord2, int length, State state){
 

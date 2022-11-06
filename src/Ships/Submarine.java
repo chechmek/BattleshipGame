@@ -10,4 +10,8 @@ public class Submarine extends Ship {
     }
     public static final int Length = 3;
     public static final int Count = 3;
+    @Override
+    public String getSign() {
+        return "S";
+    }
 }

@@ -9,4 +9,6 @@ public interface IPlayer {
     //For initialiaztion
     void setShips();
     void setEnemy(IEnemy enemy);
+    //Just for beautiful victoryScreen
+    String getName();
 }

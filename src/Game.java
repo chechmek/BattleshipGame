@@ -29,19 +29,25 @@ public class Game {
     private void GameLoop(){
         while(!gameIsEnded){
             // GameLoop
-            Move(player);
+            if(player.isDefeated()){
+                gameIsEnded = true;
+                ui.showVictoryScreen(playerAI);
+                return;
+            }
+            player.Move();
             ui.updateScreen(player.getMap(), playerAI.getMap());
-            Move(playerAI);
+
+            if(playerAI.isDefeated()){
+                gameIsEnded = true;
+                ui.showVictoryScreen(player);
+                return;
+            }
+            playerAI.Move();
             ui.updateScreen(player.getMap(), playerAI.getMap());
         }
     }
 
     private void Move(IPlayer player){
-        if(player.isDefeated()){
-            gameIsEnded = true;
-            ui.showVictoryScreen(player);
-            return;
-        }
-        player.Move();
+
     }
 }

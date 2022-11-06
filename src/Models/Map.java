@@ -124,7 +124,7 @@ public class Map implements IMap
         // Damage on Map
         var isShip = tryDamageShip(coordinate);
         if (isShip){
-            grid[coordinate.X][coordinate.Y].State = State.DamagedShip;
+           // grid[coordinate.X][coordinate.Y].State = State.DamagedShip;
         }
         else {
             grid[coordinate.X][coordinate.Y].State = State.Unavailable;
@@ -135,11 +135,22 @@ public class Map implements IMap
         for (int i = 0; i < ships.size(); i++) {
             // length returns number of rows
             for (int j = 0; j < ships.get(i).Array.length; j++) {
-                // here length returns # of columns corresponding to current row
+                // Check if hit
                 var shipArray = ships.get(i).Array;
-                if(shipArray[j].Coordinate.X == coordinate.X
-                        && shipArray[j].Coordinate.Y == coordinate.Y){
+                if(shipArray[j].Coordinate.X == coordinate.X && shipArray[j].Coordinate.Y == coordinate.Y){
+                    State state = shipArray[j].State;
                     ships.get(i).Array[j].State = State.DamagedShip;
+                    grid[coordinate.X][coordinate.Y].State = State.DamagedShip;
+                    //Check if destroyed
+                    if(ships.get(i).isDestroyed()){
+                        breakAroundShip(ships.get(i), grid);
+//                        for(int c = 0; c < ships.get(i).Array.length; c++){
+//                            // show the ship back
+//                            grid[ships.get(i).Array[c].Coordinate.X][ships.get(i).Array[c].Coordinate.Y].State
+//                                    = state;
+//                        }
+                    }
+
                     return true;
                 }
             }

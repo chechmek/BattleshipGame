@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Player extends PlayerBase
 {
     private IInput Input;
+    private String Name = "Player";
     public Player(){
         Input = new Input();
     }
@@ -20,6 +21,10 @@ public class Player extends PlayerBase
     public void setShips() {
         ArrayList<Ship> Ships = Input.setShips();
         Map.setShips(Ships);
+    }
 
+    @Override
+    public String getName() {
+        return Name;
     }
 }

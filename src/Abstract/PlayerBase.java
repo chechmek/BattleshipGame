@@ -30,7 +30,7 @@ public abstract class PlayerBase implements IPlayer, IEnemy {
             // length returns number of rows
             for (int j = 0; j < grid[i].length; j++) {
                 // here length returns # of columns corresponding to current row
-                if(grid[i][j].State == State.Available){
+                if(grid[i][j].withShip()){
                     return false;
                 }
             }
