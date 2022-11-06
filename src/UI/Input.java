@@ -134,13 +134,13 @@ public class Input implements IInput {
     private boolean isValidShip(Coordinate coord1, Coordinate coord2, int length, Cell[][] localGrid) {
         if (coord1.X == coord2.X && coord2.Y - coord1.Y == length - 1) {
             for(int i = 0; i < length; i++){
-                if(localGrid[coord1.X][i].withShip() || localGrid[coord1.X][i].State == State.Unavailable)
+                if(localGrid[coord1.X][coord1.Y + i].withShip() || localGrid[coord1.X][coord1.Y + i].State == State.Unavailable)
                     return false;
             }
             return true;
         } else if (coord1.Y == coord2.Y && coord2.X - coord1.X == length - 1) {
             for(int i = 0; i < length; i++){
-                if(localGrid[i][coord1.Y].withShip() || localGrid[i][coord1.Y].State == State.Unavailable)
+                if(localGrid[coord1.X + i][coord1.Y].withShip() || localGrid[coord1.X + i][coord1.Y].State == State.Unavailable)
                     return false;
             }
             return true;
