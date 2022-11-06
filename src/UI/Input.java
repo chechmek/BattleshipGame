@@ -24,7 +24,8 @@ public class Input implements IInput {
 
         while (!gotCoord) {
             try {
-                Coordinate coordinate = getCoordinateFromStr(input);
+                String coordStr = input.nextLine();
+                Coordinate coordinate = getCoordinateFromStr(coordStr);
                 gotCoord = true;
                 return coordinate;
             } catch (Exception ex) {
@@ -49,20 +50,20 @@ public class Input implements IInput {
         try {
             showLocalGrid(localGrid);
             for (int i = 0; i < Carrier.Count; i++) {
-                ships.add(setCarrierShip(input, localGrid));
+                ships.add(setCarrierShip(input, localGrid, i + 1));
                 showLocalGrid(localGrid);
             }
             // commented for testing
 //            for (int i = 0; i < Battleship.Count; i++) {
-//                ships.add(setBattleShip(input, localGrid));
+//                ships.add(setBattleShip(input, localGrid, i + 1));
 //                showLocalGrid(localGrid);
 //            }
 //            for (int i = 0; i < Submarine.Count; i++) {
-//                ships.add(setSubmarineShip(input, localGrid));
+//                ships.add(setSubmarineShip(input, localGrid, i + 1));
 //                showLocalGrid(localGrid);
 //            }
 //            for (int i = 0; i < Patrol.Count; i++) {
-//                ships.add(setPatrolShip(input, localGrid));
+//                ships.add(setPatrolShip(input, localGrid, i + 1));
 //                showLocalGrid(localGrid);
 //            }
         } catch (Exception e) {
@@ -88,15 +89,12 @@ public class Input implements IInput {
         put("J", 9);
     }};
 
-    private Coordinate getCoordinateFromStr(Scanner input) throws Exception {
-        String coord1 = input.nextLine();
-        String[] parts = coord1.split(" ");
-
-        String xStr = parts[0].trim();
-        String yStr = parts[1].trim();
+    private Coordinate getCoordinateFromStr(String coord) throws Exception {
+        String xStr = coord.substring(0, 1);
+        String yStr = coord.substring(1, 2);
         System.out.println("x: " + xStr + "\ny: " + yStr);
 
-        int x = dict.get(parts[0].trim().toUpperCase());
+        int x = dict.get(xStr.trim().toUpperCase());
         int y = Integer.parseInt(yStr);
         if (!isValidInt(x))
             throw new Exception("X is not valid: " + x);
@@ -129,15 +127,16 @@ public class Input implements IInput {
         return false;
     }
 
-    private Ship setBattleShip(Scanner input, Cell[][] localGrid) throws Exception {
+    private Ship setBattleShip(Scanner input, Cell[][] localGrid, int count) throws Exception {
         boolean isCreated = false;
         Battleship battleship;
         while (!isCreated) {
             try {
-                System.out.println("Enter starting coordinates of Battleship ");
-                Coordinate begin = getCoordinateFromStr(input);
-                System.out.println("Enter ending coordinates of Battleship ");
-                Coordinate end = getCoordinateFromStr(input);
+                System.out.println("Enter coordinates of Battleship " + count);
+                String coordsStr = input.nextLine().trim();
+                String[] coordsStrArray = coordsStr.split(",");
+                Coordinate begin = getCoordinateFromStr(coordsStrArray[0]);
+                Coordinate end = getCoordinateFromStr(coordsStrArray[1]);
 
                 if (!isValidShip(begin, end, Battleship.Length, localGrid))
                     throw new Exception("Coordinates are not valid!");
@@ -155,15 +154,16 @@ public class Input implements IInput {
         throw new Exception("Cannot create a battleship");
     }
 
-    private Ship setPatrolShip(Scanner input, Cell[][] localGrid) throws Exception {
+    private Ship setPatrolShip(Scanner input, Cell[][] localGrid, int count) throws Exception {
         boolean isCreated = false;
         Patrol ship;
         while (!isCreated) {
             try {
-                System.out.println("Enter starting coordinates of Patrol ");
-                Coordinate begin = getCoordinateFromStr(input);
-                System.out.println("Enter ending coordinates of Patrol ");
-                Coordinate end = getCoordinateFromStr(input);
+                System.out.println("Enter coordinates of Patrol " + count);
+                String coordsStr = input.nextLine().trim();
+                String[] coordsStrArray = coordsStr.split(",");
+                Coordinate begin = getCoordinateFromStr(coordsStrArray[0]);
+                Coordinate end = getCoordinateFromStr(coordsStrArray[1]);
 
                 if (!isValidShip(begin, end, Patrol.Length, localGrid))
                     throw new Exception("Coordinates are not valid!");
@@ -181,15 +181,16 @@ public class Input implements IInput {
         throw new Exception("Cannot create a ship");
     }
 
-    private Ship setCarrierShip(Scanner input, Cell[][] localGrid) throws Exception {
+    private Ship setCarrierShip(Scanner input, Cell[][] localGrid, int count) throws Exception {
         boolean isCreated = false;
         Carrier ship;
         while (!isCreated) {
             try {
-                System.out.println("Enter starting coordinates of Carrier ");
-                Coordinate begin = getCoordinateFromStr(input);
-                System.out.println("Enter ending coordinates of Carrier ");
-                Coordinate end = getCoordinateFromStr(input);
+                System.out.println("Enter coordinates of Carrier " + count);
+                String coordsStr = input.nextLine().trim();
+                String[] coordsStrArray = coordsStr.split(",");
+                Coordinate begin = getCoordinateFromStr(coordsStrArray[0]);
+                Coordinate end = getCoordinateFromStr(coordsStrArray[1]);
 
                 if (!isValidShip(begin, end, Carrier.Length, localGrid))
                     throw new Exception("Coordinates are not valid!");
@@ -207,15 +208,16 @@ public class Input implements IInput {
         throw new Exception("Cannot create a ship");
     }
 
-    private Ship setSubmarineShip(Scanner input, Cell[][] localGrid) throws Exception {
+    private Ship setSubmarineShip(Scanner input, Cell[][] localGrid, int count) throws Exception {
         boolean isCreated = false;
         Submarine ship;
         while (!isCreated) {
             try {
-                System.out.println("Enter starting coordinates of Submarine ");
-                Coordinate begin = getCoordinateFromStr(input);
-                System.out.println("Enter ending coordinates of Submarine ");
-                Coordinate end = getCoordinateFromStr(input);
+                System.out.println("Enter coordinates of Submarine " + count);
+                String coordsStr = input.nextLine().trim();
+                String[] coordsStrArray = coordsStr.split(",");
+                Coordinate begin = getCoordinateFromStr(coordsStrArray[0]);
+                Coordinate end = getCoordinateFromStr(coordsStrArray[1]);
 
                 if (!isValidShip(begin, end, Submarine.Length, localGrid))
                     throw new Exception("Coordinates are not valid!");

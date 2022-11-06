@@ -16,10 +16,8 @@ public class UserInterface implements IUserInterface
 
         Cell[][] playerGrid = playerMap.getGrid();
 
-
-        drawGrid(playerGrid, "TARGET GRID");
-        drawGridWithoutShips(enemyMap, "OCEAN GRID");
-
+        drawGridWithoutShips(enemyMap, "TARGET GRID");
+        drawGrid(playerGrid, "OCEAN GRID");
     }
 
     private void drawGridWithoutShips(IMap map , String name){

@@ -42,7 +42,6 @@ public class AIPlayer extends PlayerBase
             }
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
         }
         System.out.println(counter);
         Map.setShips(ships);
@@ -118,8 +117,7 @@ public class AIPlayer extends PlayerBase
 
             } catch (Exception exception) {
                 counter++;
-                System.out.println(exception.getMessage());
-                System.out.println("Try again");
+
                 if(counter>=1000)
                 {
                     counter = 0;
@@ -217,8 +215,7 @@ public class AIPlayer extends PlayerBase
                 }
                 catch (Exception exception) {
                     counter++;
-                    System.out.println(exception.getMessage());
-                    System.out.println("Try again");
+
                     if(counter>=1000)
                     {
                         counter = 0;
@@ -265,8 +262,7 @@ public class AIPlayer extends PlayerBase
                 }
                 catch (Exception exception) {
                     counter++;
-                    System.out.println(exception.getMessage());
-                    System.out.println("Try again");
+
                     if(counter>=1000)
                     {
                         counter = 0;
