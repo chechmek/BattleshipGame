@@ -3,18 +3,16 @@ package UI;
 import Abstract.IMap;
 import Abstract.IPlayer;
 import Abstract.IUserInterface;
-import Abstract.Ship;
 import Models.Cell;
 import Models.State;
 import Static.Properties;
-
-import java.util.ArrayList;
 
 public class UserInterface implements IUserInterface
 {
     public void updateScreen(IMap playerMap, IMap enemyMap) {
 
         Cell[][] playerGrid = playerMap.getGrid();
+
 
         drawGrid(playerGrid, "TARGET GRID");
         drawGridWithoutShips(enemyMap, "OCEAN GRID");
@@ -67,7 +65,6 @@ public class UserInterface implements IUserInterface
             }
         }
     }
-
     public static void drawGrid(Cell[][] grid , String name){
         System.out.print("\n===== " + name + " =====\n  A B C D E F G H I J");
         for (int i = 0; i < grid.length; i++) {
@@ -77,7 +74,9 @@ public class UserInterface implements IUserInterface
                 if (grid[i][j].State == State.Available) {
                     System.out.print("I ");
                 } else if (grid[i][j].State == State.Unavailable) {
+
                     System.out.print("- ");
+
                 } else if (grid[i][j].State == State.WithBattleship) {
                     System.out.print("B ");
                 } else if (grid[i][j].State == State.WithCarrier) {
