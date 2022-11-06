@@ -48,6 +48,11 @@ public class AIPlayer extends PlayerBase
         Map.setShips(ships);
     }
 
+    @Override
+    public String getName() {
+        return "AiPlayer";
+    }
+
     private final Dictionary<String, Integer> dict = new Hashtable<String, Integer>() {{
         put("A", 0);
         put("B", 1);

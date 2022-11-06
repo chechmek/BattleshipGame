@@ -3,9 +3,12 @@ package UI;
 import Abstract.IMap;
 import Abstract.IPlayer;
 import Abstract.IUserInterface;
+import Abstract.Ship;
 import Models.Cell;
 import Models.State;
 import Static.Properties;
+
+import java.util.ArrayList;
 
 public class UserInterface implements IUserInterface
 {
