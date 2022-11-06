@@ -10,4 +10,8 @@ public class Patrol extends Ship {
     }
     public static final int Length = 2;
     public static final int Count = 4;
+    @Override
+    public String getSign() {
+        return "P";
+    }
 }

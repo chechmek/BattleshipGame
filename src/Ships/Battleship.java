@@ -11,4 +11,9 @@ public class Battleship extends Ship {
 
     public static final int Length = 4;
     public static final int Count = 2;
+
+    @Override
+    public String getSign() {
+        return "B";
+    }
 }
