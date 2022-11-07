@@ -53,19 +53,19 @@ public class Input implements IInput {
                 ships.add(setCarrierShip(input, localGrid, i + 1));
                 showLocalGrid(localGrid);
             }
-            // commented for testing
-//            for (int i = 0; i < Battleship.Count; i++) {
-//                ships.add(setBattleShip(input, localGrid, i + 1));
-//                showLocalGrid(localGrid);
-//            }
-//            for (int i = 0; i < Submarine.Count; i++) {
-//                ships.add(setSubmarineShip(input, localGrid, i + 1));
-//                showLocalGrid(localGrid);
-//            }
-//            for (int i = 0; i < Patrol.Count; i++) {
-//                ships.add(setPatrolShip(input, localGrid, i + 1));
-//                showLocalGrid(localGrid);
-//            }
+
+            for (int i = 0; i < Battleship.Count; i++) {
+                ships.add(setBattleShip(input, localGrid, i + 1));
+                showLocalGrid(localGrid);
+            }
+            for (int i = 0; i < Submarine.Count; i++) {
+                ships.add(setSubmarineShip(input, localGrid, i + 1));
+                showLocalGrid(localGrid);
+            }
+            for (int i = 0; i < Patrol.Count; i++) {
+                ships.add(setPatrolShip(input, localGrid, i + 1));
+                showLocalGrid(localGrid);
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

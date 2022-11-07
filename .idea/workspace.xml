@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="baf5ab1a-6c9b-4551-b7dc-4e74f044af3a" name="Changes" comment="Input DONE">
-      <change beforePath="$PROJECT_DIR$/src/Models/AIPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/AIPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Map.java" afterDir="false" />
+    <list default="true" id="baf5ab1a-6c9b-4551-b7dc-4e74f044af3a" name="Changes" comment="Changed input and interface to match the documentation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Input.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +89,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667731688284</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Solved conflicts">
+      <created>1667749194081</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667749194081</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Changed input and interface to match the documentation">
+      <created>1667769304800</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667769304800</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +122,8 @@
     <MESSAGE value="Upgraded input(ships overlapping is not yet checked)" />
     <MESSAGE value="Upgraded input with determining unavailable cells" />
     <MESSAGE value="Input DONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Input DONE" />
+    <MESSAGE value="Solved conflicts" />
+    <MESSAGE value="Changed input and interface to match the documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed input and interface to match the documentation" />
   </component>
 </project>

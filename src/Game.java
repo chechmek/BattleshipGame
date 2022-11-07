@@ -46,8 +46,4 @@ public class Game {
             ui.updateScreen(player.getMap(), playerAI.getMap());
         }
     }
-
-    private void Move(IPlayer player){
-
-    }
 }
